@@ -1,5 +1,8 @@
+import os
 from typing import Iterable
 from pathlib import Path
+from bing_image_downloader import downloader
+import shutil
 from bing_image_downloader import downloader
 
 
@@ -7,12 +10,6 @@ from bing_image_downloader import downloader
 # instead of ``Path.is_dir``. Add the alias if missing so downloads work.
 if not hasattr(Path, "isdir"):
     Path.isdir = Path.is_dir
-
-
-import os
-import shutil
-from bing_image_downloader import downloader
-
 
 def download_images(search_terms: str, num_images: int, output_dir: str) -> None:
     """Download images for the given comma-separated search terms."""

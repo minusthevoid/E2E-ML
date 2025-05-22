@@ -1,15 +1,12 @@
 import argparse
 import os
-from e2e_ml import download, preprocess, augment
-from e2e_ml import model
-
+from e2e_ml import download, preprocess, augment, model
 
 def prepare_data(base_dir: str, labels: list, num_images: int, augment_data: bool):
     search = ",".join(labels)
     download.download_images(search, num_images, base_dir)
     for label in labels:
         folder = os.path.join(base_dir, label)
-from e2e_ml import model
 
 
 def run_classifier(data_dir: str) -> None:
@@ -34,8 +31,6 @@ def prepare_data(base_dir: str, terms: list, num_images: int, augment_data: bool
         if augment_data:
             augment.augment_images(folder)
 
-
-def run_pipeline_and_classify(base_dir: str, labels: list, train_num: int, test_num: int):
 def run_pipeline(train_terms: list, test_terms: list, num_train: int, num_test: int, base_dir: str):
     train_dir = os.path.join(base_dir, "train")
     test_dir = os.path.join(base_dir, "test")
@@ -48,6 +43,9 @@ def run_pipeline(train_terms: list, test_terms: list, num_train: int, num_test: 
     prepare_data(test_dir, labels, test_num, augment_data=False)
     acc = model.evaluate_classifier(clf, test_dir, labels)
     print(f"Test accuracy: {acc:.2f}")
+    
+ def run_pipeline_and_classify(base_dir: str, labels: list, train_num: int, test_num: int):
+    run_pipeline(labels, labels, train_num, test_num, base_dir)
 
 
 if __name__ == "__main__":
@@ -71,11 +69,17 @@ if __name__ == "__main__":
             print(f"{fname}: {label}")
 
 
+def run_pipeline_and_classify(base_dir: str, labels: list, train_num: int, test_num: int):
+    run_pipeline(labels, labels, train_num, test_num, base_dir)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train and evaluate image classifier")
     parser.add_argument("--dir", default="data", help="Base directory for data")
     parser.add_argument("--train_num", type=int, default=10, help="Images per class for training")
     parser.add_argument("--test_num", type=int, default=5, help="Images per class for testing")
     args = parser.parse_args()
+    labels = ["cats", "dogs"]
+    run_pipeline_and_classify(args.dir, labels, args.train_num, args.test_num)
     train_terms = ["cats", "dogs"]
     run_pipeline(train_terms, train_terms, args.train_num, args.test_num, args.dir)

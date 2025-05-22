@@ -1,5 +1,5 @@
 # E2E-ML
-ML Pipeline 
+ML Pipeline
 
 This is my attempt to create an end to end pipeline for image classification. This includes
 - Data Ingestion
@@ -10,6 +10,7 @@ This is my attempt to create an end to end pipeline for image classification. Th
 
 ## Installation
 
+Install the required Python packages before running the scripts:
 Install the required Python packages using `pip`:
 
 ```bash
@@ -80,7 +81,6 @@ python run_pipeline.py --search "cats,dogs" --num 10 --dir data
 ```
 
 ## Running Tests
-
 
 Install the project dependencies and run tests with `pytest`:
 
