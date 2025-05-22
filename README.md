@@ -8,9 +8,18 @@ This is my attempt to create an end to end pipeline for image classification. Th
 - Model Training
 - Model Evaluation
 
+## Installation
+
+Install the required Python packages using `pip`:
+
+```bash
+pip install -r requirements.txt
+```
+
 Will attempt
 - model deployment
 - monitoring model performance.
+
 
 ## Installation
 
@@ -19,6 +28,7 @@ Install the dependencies using:
 ```bash
 pip install -r requirements.txt
 ```
+
 
 ## Running the Pipeline
 
@@ -29,6 +39,7 @@ python run_pipeline.py --search "cats,dogs" --num 10 --dir data
 ```
 
 ## Running Tests
+
 
 Install the project dependencies and run tests with `pytest`:
 
@@ -46,3 +57,14 @@ python run_classifier.py --train_num 20 --test_num 5 --dir data
 
 The script downloads images of cats and dogs for training and testing, trains a
 logistic regression model, and prints predictions for the test images.
+
+
+After installing the dependencies you can run the tests with `pytest`:
+
+Install the project dependencies and run tests with `pytest`:
+
+
+```bash
+pytest
+```
+
