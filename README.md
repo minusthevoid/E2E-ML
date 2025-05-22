@@ -84,6 +84,14 @@ Install the project dependencies and run tests with `pytest`:
 pytest
 ```
 
+## Running Detection
+
+After running the pipeline you can draw bounding boxes around cats and dogs using a
+pretrained model. Provide the folder of images and an output folder:
+
+```bash
+python run_detector.py input_dir output_dir
+```
 ## Training and Classification
 
 Run the automated pipeline, train a simple model, and classify new images:

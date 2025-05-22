@@ -2,6 +2,8 @@ bing-image-downloader
 pillow
 scikit-image
 numpy
+torch
+torchvision
 scikit-learn
 joblib
 pytest
