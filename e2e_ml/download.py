@@ -1,4 +1,14 @@
 from typing import Iterable
+from pathlib import Path
+from bing_image_downloader import downloader
+
+
+# Work around a bug in bing_image_downloader where it calls ``Path.isdir``
+# instead of ``Path.is_dir``. Add the alias if missing so downloads work.
+if not hasattr(Path, "isdir"):
+    Path.isdir = Path.is_dir
+
+
 import os
 import shutil
 from bing_image_downloader import downloader
