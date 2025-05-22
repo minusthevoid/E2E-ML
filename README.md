@@ -22,6 +22,7 @@ Will attempt
 
 ## Installation
 
+Install dependencies with:
 Install project dependencies with:
 
 ## Installation
@@ -34,6 +35,9 @@ pip install -r requirements.txt
 
 ## Running the Pipeline
 
+You can run the full pipeline using:
+
+```bash
 You can run the preprocessing and augmentation pipeline using:
 
 ```bash
