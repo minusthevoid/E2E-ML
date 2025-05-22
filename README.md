@@ -9,5 +9,21 @@ This is my attempt to create an end to end pipeline for image classification. Th
 - Model Evaluation
 
 Will attempt
--model deployment
--monitoring model performance.
+- model deployment
+- monitoring model performance.
+
+## Running the Pipeline
+
+You can run the full pipeline using:
+
+```bash
+python run_pipeline.py --search "cats,dogs" --num 10 --dir data
+```
+
+## Running Tests
+
+Install the project dependencies and run tests with `pytest`:
+
+```bash
+pytest
+```
