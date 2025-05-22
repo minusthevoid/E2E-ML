@@ -30,7 +30,11 @@ python run_pipeline.py --search "cats,dogs" --num 10 --dir data
 
 ## Running Tests
 
+
 After installing the dependencies you can run the tests with `pytest`:
+
+Install the project dependencies and run tests with `pytest`:
+
 
 ```bash
 pytest
