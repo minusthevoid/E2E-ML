@@ -1,0 +1,6 @@
+bing-image-downloader
+Pillow
+scikit-image
+scikit-learn
+numpy
+joblib
