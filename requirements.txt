@@ -4,3 +4,9 @@ scikit-image
 scikit-learn
 numpy
 joblib
+pillow
+scikit-image
+numpy
+scikit-learn
+joblib
+pytest
