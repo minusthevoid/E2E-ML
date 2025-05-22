@@ -19,3 +19,5 @@ def download_images(search_terms: str, num_images: int, output_dir: str) -> None
             force_replace=True,
             timeout=60,
         )
+        downloader.download(term, limit=num_images, output_dir=output_dir,
+                            adult_filter_off=True, force_replace=False, timeout=60)
