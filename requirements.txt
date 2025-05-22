@@ -2,4 +2,6 @@ bing-image-downloader
 pillow
 scikit-image
 numpy
+scikit-learn
+joblib
 pytest
